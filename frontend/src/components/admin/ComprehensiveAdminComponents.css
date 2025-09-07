@@ -1,0 +1,1543 @@
+/* Comprehensive Admin Components Styles */
+
+/* ==================== COMMON PAGE STYLES ==================== */
+
+/* Stats Summary */
+.stats-summary {
+  margin-bottom: 24px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-card .stat-number {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1f2937;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-card .stat-label {
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Loading and Empty States */
+.loading-state, .empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+}
+
+.loading-state p, .empty-state p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 20px 0;
+}
+
+.pagination span {
+  color: #6b7280;
+  font-weight: 500;
+}
+.admin-page {
+  padding: 24px 0;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.page-icon {
+  font-size: 32px;
+  color: #374151;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.page-title h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.page-title p {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin: 4px 0 0 0;
+}
+
+/* Ensure header actions align and have spacing */
+.page-header .page-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between buttons */
+}
+/* Fallback spacing if gap isn't supported */
+.page-header .page-actions > * + * { margin-left: 8px; }
+
+.page-controls {
+  /* reset to a cleaner horizontal bar */
+  display: flex;
+  align-items: center; /* vertically centers all controls */
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  flex-wrap: wrap;
+}
+
+/* Keep users controls on a single line on desktop */
+.users-page .page-controls {
+  flex-wrap: nowrap;
+}
+
+.search-box {
+  position: relative;
+  flex: 1 1 320px;
+  max-width: 420px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.users-page .page-controls .search-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px 0 34px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+  line-height: 40px; /* align text vertically */
+  vertical-align: middle;
+  margin: 0;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: none;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Custom select wrapper with arrow (match header style) */
+.select-with-arrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Add right padding so text doesn't overlap the arrow */
+.select-with-arrow .filter-select {
+  padding-right: 36px;
+}
+
+/* Hide default arrow on legacy browsers (Edge/IE) */
+.select-with-arrow .filter-select::-ms-expand {
+  display: none;
+}
+
+/* Arrow container */
+.select-with-arrow .select-arrow {
+  position: absolute;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* keep clicks for the select */
+  color: #6b7280; /* Gray-500 like header */
+}
+
+/* Arrow icon size + transition similar to header */
+.select-with-arrow .dropdown-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+/* Provide subtle feedback when focusing the select */
+.select-with-arrow:focus-within .dropdown-arrow {
+  transform: rotate(180deg);
+  color: #374151;
+}
+
+.users-page .page-controls .filter-select {
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  min-width: 150px;
+  box-sizing: border-box;
+  line-height: 40px;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: none;
+}
+
+/* Users page specific: make Export button match 40px height */
+.users-page .page-controls .btn,
+.users-page .page-controls .btn-outline {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 6px;
+  /* use flex centering instead of line-height for reliability */
+  box-sizing: border-box;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+/* Ensure icons and text align centrally */
+.users-page .page-controls .btn svg,
+.users-page .page-controls .search-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+/* Make select arrows consistent; prevents odd height rendering */
+.users-page .page-controls .filter-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Normalize outline button to match select/input border */
+.users-page .page-controls .btn-outline {
+  border-width: 1px !important;
+  border-color: #d1d5db !important;
+  background: #fff;
+  color: #374151;
+}
+
+/* Ensure everything aligns perfectly on the baseline */
+.users-page .page-controls .search-box,
+.users-page .page-controls .filters,
+.users-page .page-controls .btn,
+.users-page .page-controls .btn-outline {
+  align-self: center;
+}
+
+/* New search control styled like buttons */
+.users-page .page-controls .search-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: #374151;
+  box-sizing: border-box;
+  margin: 0;
+  flex: 1 1 320px;
+  max-width: 420px;
+}
+
+.users-page .page-controls .search-control:focus-within {
+  border-color: #2563eb;
+}
+
+.users-page .page-controls .search-control > svg {
+  width: 18px;
+  height: 18px;
+  color: #6b7280;
+}
+
+.users-page .page-controls .search-control-input {
+  flex: 1 1 auto;
+  min-width: 160px;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  padding: 0;
+}
+
+/* Classes page search control — identical to Users */
+.classes-page .page-controls .search-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: #374151;
+  box-sizing: border-box;
+  margin: 0;
+  flex: 1 1 320px;
+  max-width: 420px;
+}
+
+.classes-page .page-controls .search-control:focus-within {
+  border-color: #2563eb;
+}
+
+.classes-page .page-controls .search-control > svg {
+  width: 18px;
+  height: 18px;
+  color: #6b7280;
+}
+
+.classes-page .page-controls .search-control-input {
+  flex: 1 1 auto;
+  min-width: 160px;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  padding: 0;
+}
+
+/* ==================== CLASSES PAGE: MATCH USERS FLAT CONTROLS ==================== */
+.classes-page .page-controls {
+  flex-wrap: nowrap;
+}
+
+/* Restyle search box to match Users search-control */
+.classes-page .page-controls .search-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: #374151;
+  box-sizing: border-box;
+  margin: 0;
+  flex: 1 1 320px;
+  max-width: 420px;
+}
+
+.classes-page .page-controls .search-box:focus-within {
+  border-color: #2563eb;
+}
+
+.classes-page .page-controls .search-icon {
+  position: static; /* override absolute */
+  transform: none;
+  left: auto; top: auto;
+  width: 18px; height: 18px;
+  color: #6b7280;
+}
+
+.classes-page .page-controls .search-input {
+  flex: 1 1 auto;
+  min-width: 160px;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  padding: 0;
+}
+
+/* Filters and buttons match 40px height */
+.classes-page .page-controls .filter-select,
+.classes-page .page-controls .btn,
+.classes-page .page-controls .btn-outline {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.classes-page .page-controls .filter-select {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  min-width: 150px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.classes-page .page-controls .btn-outline {
+  border-width: 1px !important;
+  border-color: #d1d5db !important;
+  background: #fff;
+  color: #374151;
+}
+
+/* ==================== ASSIGNMENTS PAGE: MATCH USERS/CLASSES FLAT CONTROLS ==================== */
+.assignments-page .page-controls {
+  flex-wrap: nowrap;
+}
+
+.assignments-page .page-controls .search-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: #374151;
+  box-sizing: border-box;
+  margin: 0;
+  flex: 1 1 320px;
+  max-width: 420px;
+}
+
+.assignments-page .page-controls .search-control:focus-within { border-color: #2563eb; }
+.assignments-page .page-controls .search-control > svg {
+  width: 18px; height: 18px; color: #6b7280;
+}
+.assignments-page .page-controls .search-control-input {
+  flex: 1 1 auto; min-width: 160px; height: 100%; border: none; outline: none; background: transparent; font-size: 14px; padding: 0;
+}
+
+.assignments-page .page-controls .filter-select,
+.assignments-page .page-controls .btn,
+.assignments-page .page-controls .btn-outline {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.assignments-page .page-controls .filter-select {
+  border: 1px solid #d1d5db; background: #fff; min-width: 150px;
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+}
+
+.assignments-page .page-controls .btn-outline {
+  border-width: 1px !important; border-color: #d1d5db !important; background: #fff; color: #374151;
+}
+
+/* ==================== ANNOUNCEMENTS PAGE: MATCH USERS/CLASSES/ASSIGNMENTS ==================== */
+.announcements-page .page-controls {
+  flex-wrap: nowrap;
+}
+
+.announcements-page .page-controls .search-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: #374151;
+  box-sizing: border-box;
+  margin: 0;
+  flex: 1 1 320px;
+  max-width: 420px;
+}
+
+.announcements-page .page-controls .search-control:focus-within { border-color: #2563eb; }
+.announcements-page .page-controls .search-control > svg { width: 18px; height: 18px; color: #6b7280; }
+.announcements-page .page-controls .search-control-input {
+  flex: 1 1 auto; min-width: 160px; height: 100%; border: none; outline: none; background: transparent; font-size: 14px; padding: 0;
+}
+
+.announcements-page .page-controls .filter-select,
+.announcements-page .page-controls .btn,
+.announcements-page .page-controls .btn-outline {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.announcements-page .page-controls .filter-select {
+  border: 1px solid #d1d5db; background: #fff; min-width: 150px;
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+}
+
+.announcements-page .page-controls .btn-outline {
+  border-width: 1px !important; border-color: #d1d5db !important; background: #fff; color: #374151;
+}
+
+/* ==================== BUTTON STYLES ==================== */
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-sm {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  transform: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #e9ecef;
+  color: #6c757d;
+}
+
+.btn-outline:hover {
+  background: #f8f9fa;
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+.btn-warning {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  color: white;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc3545, #e74c3c);
+  color: white;
+}
+
+/* Normalize header action buttons to be consistent across pages */
+.page-header .page-actions .btn,
+.page-header .page-actions .btn-outline {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 40px;
+}
+.page-header .page-actions .btn svg,
+.page-header .page-actions .btn-outline svg {
+  width: 18px;
+  height: 18px;
+  color: inherit;
+}
+
+/* Make outline variant in header match flat overview button style */
+.page-header .page-actions .btn,
+.page-header .page-actions .btn-outline {
+  border-width: 1px !important;
+  border-color: #d1d5db !important;
+  background: #fff !important;
+  color: #111827 !important; /* plain black-ish */
+  font-weight: 400 !important; /* normal weight */
+}
+.page-header .page-actions .btn svg { color: inherit; }
+.page-header .page-actions .btn svg *,
+.page-header .page-actions .btn-outline svg * {
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+/* Keep outline button neutral on hover within page headers */
+.page-header .page-actions .btn:hover,
+.page-header .page-actions .btn-outline:hover {
+  border-color: #d1d5db !important;
+  background: #fff !important;
+  color: #111827 !important;
+}
+
+/* ==================== DATA TABLE STYLES ==================== */
+.data-table-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Users page: remove drop shadow for cleaner, flatter look */
+.users-page .data-table-container {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  filter: none !important;
+  border: 1px solid #e5e7eb !important; /* subtle gray border */
+  border-radius: 6px !important;
+  overflow: visible !important; /* avoid anti-aliased edge that looks like shadow */
+}
+
+/* Remove any residual shadows within users table */
+.users-page .data-table-container *,
+.users-page .data-table-container *::before,
+.users-page .data-table-container *::after,
+.users-page .data-table-container::before,
+.users-page .data-table-container::after {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th {
+  background: #f8f9fa;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.data-table td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f3f4;
+  vertical-align: middle;
+}
+
+.data-table tr:hover {
+  background: #f8f9fa;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.user-id {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.role-badge {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  font-size: 14px; /* unify with AdminDashboard.css */
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.role-badge.role-student { color: #1d4ed8; background: transparent; }
+
+.role-badge.role-teacher { color: #7c3aed; background: transparent; }
+
+.role-badge.role-admin { color: #b45309; background: transparent; }
+
+.status-badge {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  color: inherit;
+}
+
+.status-badge.active { background: transparent; color: #166534; }
+
+.status-badge.inactive { background: transparent; color: #991b1b; }
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+/* ==================== CLASSES GRID ==================== */
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+}
+
+.class-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: none; /* flatten */
+  border: 1px solid #e5e7eb; /* subtle border */
+  overflow: visible; /* avoid anti-aliased shadow edge */
+  transition: none;
+}
+
+.class-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.class-header {
+  padding: 20px;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.class-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 4px 0;
+}
+
+.class-code {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.class-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Make class card action buttons compact (similar to announcements) */
+.classes-page .class-actions .btn {
+  height: 32px;
+  padding: 0 6px; /* narrower width */
+  border-radius: 6px;
+  box-shadow: none;
+  min-width: auto;
+}
+.classes-page .class-actions .btn-outline {
+  border: 1px solid #d1d5db !important;
+  background: #fff;
+  color: #374151;
+}
+.classes-page .class-actions .btn-danger {
+  background: #ef4444 !important;
+  box-shadow: none !important;
+}
+.classes-page .class-actions .btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.class-details {
+  padding: 20px;
+}
+
+.class-meta {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.class-grade,
+.class-subject {
+  padding: 4px 12px;
+  background: #e3f2fd;
+  color: #1976d2;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.class-status {
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.class-status.status-active {
+  background: #e8f5e8;
+  color: #2e7d32;
+}
+
+.class-teacher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.teacher-icon {
+  color: #667eea;
+}
+
+.class-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+/* ==================== PRINT STYLES (Reports) ==================== */
+@media print {
+  /* Simplify layout and remove non-essential UI */
+  body, html, #root {
+    background: #ffffff !important;
+  }
+  .page-header .page-actions,
+  .page-controls,
+  .expand-section,
+  .extra-charts { /* hide expandable extra charts */
+    display: none !important;
+  }
+  .admin-page {
+    padding: 0 !important;
+  }
+  .charts-grid {
+    grid-template-columns: 1fr !important; /* one column for print clarity */
+    gap: 12px !important;
+  }
+  .chart-card {
+    border: 1px solid #d1d5db !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .summary-grid,
+  .summary-stats {
+    grid-template-columns: repeat(2, 1fr) !important; /* concise KPI grid */
+    gap: 12px !important;
+  }
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+/* ==================== ASSIGNMENTS GRID ==================== */
+.assignments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 24px;
+}
+
+.assignment-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: none; /* flatten */
+  border: 1px solid #e5e7eb; /* subtle border */
+  overflow: visible;
+  transition: none;
+}
+
+.assignment-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.assignment-header {
+  padding: 20px;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.assignment-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 4px 0;
+}
+
+.assignment-class {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.assignment-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.assignment-details {
+  padding: 20px;
+}
+
+.assignment-description {
+  color: #6c757d;
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.assignment-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label {
+  font-size: 12px;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.meta-value {
+  font-size: 14px;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.assignment-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid #f1f3f4;
+}
+
+.assignment-status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.assignment-status.status-draft {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+.assignment-status.status-published {
+  background: #e8f5e8;
+  color: #2e7d32;
+}
+
+.assignment-status.status-closed {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* ==================== ANNOUNCEMENTS LIST ==================== */
+.announcements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.announcement-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: none; /* flatten */
+  border: 1px solid #e5e7eb; /* subtle border */
+  overflow: visible;
+  transition: none;
+}
+
+.announcement-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.announcement-header {
+  padding: 12px 16px;
+  background: transparent; /* merge with card */
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.announcement-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.announcement-badges {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.tone-badge,
+.audience-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+}
+
+/* Tone variants */
+.tone-badge.tone-info { background: #f0f9ff; border-color: #bae6fd; color: #075985; }
+.tone-badge.tone-warning { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+.tone-badge.tone-danger { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+.tone-badge.tone-success { background: #f0fdf4; border-color: #bbf7d0; color: #166534; }
+
+/* Audience variants */
+.audience-badge.audience-all { background: #f5f7f9; border-color: #e5e7eb; color: #374151; }
+.audience-badge.audience-teacher { background: #f5f3ff; border-color: #ddd6fe; color: #5b21b6; }
+.audience-badge.audience-student { background: #eff6ff; border-color: #bfdbfe; color: #1d4ed8; }
+
+.type-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.type-badge.type-system { color: #b45309; border-color: #fcd9bd; background: #fffbf6; }
+
+.type-badge.type-academic { color: #1d4ed8; border-color: #c7d2fe; background: #f7f9ff; }
+
+.type-badge.type-event { color: #7c3aed; border-color: #e9d5ff; background: #faf5ff; }
+
+/* Make any generic status-badge in announcements look like a chip */
+.announcements-page .status-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  background: #f5f7f9;
+  color: #374151;
+}
+.announcements-page .status-badge.active,
+.announcements-page .status-badge.published {
+  background: #f0fdf4; /* subtle green */
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.announcements-page .status-badge.status-published {
+  background: #f0fdf4; /* subtle green */
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+.announcements-page .status-badge.status-draft {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+.announcement-actions {
+  display: flex;
+  gap: 8px;
+}
+.announcements-page .announcement-actions .btn {
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 6px;
+  box-shadow: none;
+}
+.announcements-page .announcement-actions .btn-outline {
+  border: 1px solid #d1d5db !important;
+  background: #fff;
+  color: #374151;
+}
+.announcements-page .announcement-actions .btn-danger {
+  background: #ef4444 !important;
+  box-shadow: none !important;
+}
+
+.announcement-content {
+  padding: 16px;
+  background: transparent; /* ensure no inner blue box */
+}
+
+.announcement-content p {
+  color: #2c3e50;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.announcement-footer {
+  padding: 12px 16px;
+  background: transparent;
+  border-top: 1px solid #f1f3f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #7f8c8d;
+}
+
+.announcement-meta {
+  display: flex;
+  gap: 16px;
+}
+
+.announcement-stats {
+  font-weight: 600;
+}
+
+/* ==================== REPORTS STYLES ==================== */
+.reports-page .page-controls { flex-wrap: nowrap; }
+
+.reports-page .page-controls .filter-select,
+.reports-page .page-controls .btn,
+.reports-page .page-controls .btn-outline {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.reports-page .page-controls .filter-select {
+  border: 1px solid #d1d5db;
+  background: #fff;
+  min-width: 160px;
+  -webkit-appearance: none; -moz-appearance: none; appearance: none;
+}
+
+.reports-page .page-header .page-actions .btn-outline {
+  border-width: 1px !important;
+  border-color: #d1d5db !important;
+  background: #fff;
+  color: #374151;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 24px;
+}
+
+.chart-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: none;
+  border: 1px solid #e5e7eb;
+}
+
+.chart-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 16px 0;
+}
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.report-card {
+  background: white;
+  border-radius: 8px; /* flatter */
+  box-shadow: none; /* remove shadows */
+  border: 1px solid #e5e7eb; /* subtle border */
+  overflow: visible;
+}
+
+.report-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  padding: 20px;
+  background: #f8f9fa;
+}
+
+.chart-container {
+  padding: 20px;
+}
+
+.chart-placeholder {
+  height: 200px;
+  background: #f3f4f6;
+  border-radius: 8px; /* match flatter corners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f8c8d;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.reports-summary { margin-top: 24px; }
+
+/* Responsive KPI grid */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+/* Compact KPI card */
+.summary-card {
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: none;
+  border: 1px solid #e5e7eb;
+  padding: 16px;
+}
+
+/* A single label-value row inside a card (no dividers) */
+.summary-card .summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  border: none;
+}
+
+.summary-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #374151;
+}
+.summary-label svg { color: #6b7280; }
+
+.summary-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ==================== GENERIC MODAL ==================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal {
+  width: 100%;
+  max-width: 480px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 16px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #f1f3f4;
+}
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.modal-body {
+  padding: 16px 20px;
+  color: #374151;
+  font-size: 14px;
+}
+
+.modal-footer {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-top: 1px solid #f1f3f4;
+  background: #fafafa;
+}
+
+@media (max-width: 480px) {
+  .modal { max-width: 100%; }
+}
+
+/* ==================== SETTINGS STYLES ==================== */
+.settings-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.settings-section {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.settings-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+  padding: 20px;
+  background: #f8f9fa;
+}
+
+.settings-grid {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.setting-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.setting-item label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.setting-input {
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.setting-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 16px 0;
+  }
+  
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .page-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .users-page .page-controls {
+    flex-wrap: wrap; /* allow wrapping on small screens */
+  }
+  
+  .filters {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .classes-grid,
+  .assignments-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .reports-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .summary-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .data-table-container {
+    overflow-x: auto;
+  }
+  
+  .data-table {
+    min-width: 600px;
+  }
+}
+
+/* ==================== BLUE THEME OVERRIDES ==================== */
+/* Titles and icon accents */
+.page-title h1 {
+  color: #1f2937 !important; /* solid readable title */
+}
+
+.page-icon,
+.user-avatar {
+  background: transparent !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #3b82f6 !important;
+  box-shadow: none !important;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15) !important;
+}
+
+.btn-outline:hover {
+  border-color: #60a5fa !important;
+  color: #3b82f6 !important;
+}
+
+/* Inputs focus */
+.search-input:focus,
+.filter-select:focus,
+.setting-input:focus {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.16) !important;
+}
+
+/* Badges that were blue-ish keep consistent blue */
+.type-badge.type-academic {
+  background: #e8f1fe !important;
+  color: #3b82f6 !important;
+}

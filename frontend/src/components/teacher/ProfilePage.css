@@ -1,0 +1,740 @@
+/* TeacherProfilePage.css - Style cho trang hồ sơ cá nhân giáo viên */
+
+.teacher-profile-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Reduced from 24px */
+  background: #fff;
+  height: calc(100vh - 64px); /* More precise height calculation */
+  margin-top: 0; /* Remove margin-top to prevent overflow */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Keep this to prevent external scrollbar */
+  box-sizing: border-box;
+  position: fixed;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Header - Cố định */
+.teacher-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 12px 20px; /* Added horizontal padding to match page padding */
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+  flex-shrink: 0;
+  z-index: 10;
+  margin: 0 -20px; /* Negative margin to extend border to edges */
+}
+
+.teacher-back-button {
+  background: none;
+  border: none;
+  color: #1976d2;
+  font-size: 14px; /* Reduced from 16px */
+  cursor: pointer;
+  padding: 6px 12px; /* Reduced from 8px 16px */
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Reduced from 8px */
+}
+
+.teacher-back-button:hover {
+  background-color: #f5f5f5;
+}
+
+.teacher-profile-title {
+  font-size: 20px !important; /* Reduced from 24px */
+  font-weight: 600 !important;
+  color: #666 !important;
+  margin: 0 !important;
+}
+
+.teacher-security-status {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* Reduced from 8px */
+  background: #4caf50;
+  color: white;
+  padding: 6px 12px; /* Reduced from 8px 16px */
+  border-radius: 16px; /* Reduced from 20px */
+  font-size: 12px; /* Reduced from 14px */
+  font-weight: 500;
+}
+
+.teacher-security-icon {
+  font-size: 14px; /* Reduced from 18px */
+}
+
+/* Content Container - Có thể cuộn */
+.teacher-profile-content-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 0 40px 0; /* Increased bottom padding to ensure content is scrollable */
+  /* Hiển thị thanh cuộn */
+  scrollbar-width: thin; /* Firefox */
+  -ms-overflow-style: auto; /* Internet Explorer 10+ */
+  min-height: 0; /* Ensure flex child can shrink */
+}
+
+/* Tùy chỉnh thanh cuộn cho Webkit browsers (Chrome, Safari, Edge) */
+.teacher-profile-content-wrapper::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+}
+
+.teacher-profile-content-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.teacher-profile-content-wrapper::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.teacher-profile-content-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Avatar Section */
+.teacher-avatar-section {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0; /* Reduced from 40px 0 */
+  flex-shrink: 0;
+}
+
+.teacher-main-avatar {
+  position: relative;
+  display: inline-block;
+}
+
+.teacher-avatar-placeholder {
+  width: 100px; /* Reduced from 120px */
+  height: 100px; /* Reduced from 120px */
+  border-radius: 50%;
+  background: #f5f5f5;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px; /* Reduced from 48px */
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
+}
+
+.teacher-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.teacher-camera-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 28px; /* Reduced from 32px */
+  height: 28px; /* Reduced from 32px */
+  border-radius: 50%;
+  background: #333;
+  border: 2px solid #fff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.teacher-camera-button:hover {
+  background: #555;
+  transform: scale(1.05);
+}
+
+.teacher-camera-button svg {
+  width: 14px; /* Reduced from 16px */
+  height: 14px; /* Reduced from 16px */
+}
+
+.teacher-save-avatar-button {
+  position: absolute;
+  top: -8px; /* Reduced from -10px */
+  right: -8px; /* Reduced from -10px */
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 16px; /* Reduced from 20px */
+  padding: 6px 12px; /* Reduced from 8px 16px */
+  font-size: 11px; /* Reduced from 12px */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  z-index: 10;
+}
+
+.teacher-save-avatar-button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+/* Content */
+.teacher-profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Reduced from 40px */
+}
+
+/* Section */
+.teacher-profile-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0;
+}
+
+.teacher-section-title {
+  font-size: 18px; /* Reduced from 20px */
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0; /* Reduced from 24px */
+  padding-bottom: 8px; /* Reduced from 12px */
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.teacher-section-intro {
+  font-size: 13px; /* Reduced from 14px */
+  color: #666;
+  margin-bottom: 16px; /* Reduced from 24px */
+  line-height: 1.4; /* Reduced from 1.5 */
+  padding: 12px; /* Reduced from 16px */
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #1976d2;
+}
+
+/* Info Items */
+.teacher-info-item {
+  display: flex !important;
+  align-items: center !important;
+  padding: 14px 0 !important; /* Reduced from 20px 0 */
+  border-bottom: 1px solid #f0f0f0 !important;
+  gap: 12px !important; /* Reduced from 16px */
+  min-height: 60px !important; /* Reduced from 80px */
+  position: relative !important;
+}
+
+.teacher-info-item:last-child {
+  border-bottom: none !important;
+}
+
+.teacher-info-icon {
+  width: 32px !important; /* Reduced from 40px */
+  height: 32px !important; /* Reduced from 40px */
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important; /* Reduced from 20px */
+  color: white !important;
+  flex-shrink: 0 !important;
+}
+
+.teacher-info-icon svg {
+  width: 16px !important; /* Reduced from 20px */
+  height: 16px !important; /* Reduced from 20px */
+}
+
+/* Icon colors */
+.teacher-info-icon {
+  background: #2196f3 !important;
+}
+
+.teacher-phone-icon {
+  background: #2196f3 !important;
+}
+
+.teacher-email-icon {
+  background: #4caf50 !important;
+}
+
+.teacher-password-icon {
+  background: #f44336 !important;
+}
+
+.teacher-facebook-icon {
+  background: #1877f2 !important;
+}
+
+.teacher-name-icon {
+  background: #2196f3 !important;
+}
+
+.teacher-birth-icon {
+  background: #f44336 !important;
+}
+
+.teacher-location-icon {
+  background: #ff9800 !important;
+}
+
+.teacher-school-icon {
+  background: #4caf50 !important;
+}
+
+/* Info Content */
+.teacher-info-content {
+  flex: 1 !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+.teacher-info-label {
+  font-size: 16px !important; /* Reduced from 20px */
+  color: #666 !important;
+  margin-bottom: 2px !important; /* Reduced from 4px */
+  font-weight: 500 !important;
+  text-align: left !important;
+}
+
+.teacher-info-value {
+  font-size: 16px !important; /* Reduced from 20px */
+  color: #333 !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: calc(100% - 120px) !important; /* leave room for label and actions */
+  max-width: 80% !important;
+  pointer-events: none !important;
+}
+
+/* Actions */
+.teacher-info-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important; /* Reduced from 12px */
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.teacher-verify-badge {
+  background: #f44336 !important;
+  color: white !important;
+  padding: 3px 6px !important; /* Reduced from 4px 8px */
+  border-radius: 4px !important;
+  font-size: 12px !important; /* Reduced from 16px */
+  font-weight: 500 !important;
+}
+
+.teacher-copy-button {
+  background: none !important;
+  border: none !important;
+  color: #666 !important;
+  cursor: pointer !important;
+  padding: 6px !important; /* Reduced from 8px */
+  border-radius: 4px !important;
+  transition: all 0.2s !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+}
+
+.teacher-copy-button:hover {
+  background-color: #f5f5f5 !important;
+  color: #1976d2 !important;
+}
+
+.teacher-copy-button svg {
+  width: 16px !important; /* Reduced from 18px */
+  height: 16px !important; /* Reduced from 18px */
+}
+
+.teacher-edit-button {
+  background: none !important;
+  border: none !important;
+  color: #1976d2 !important;
+  cursor: pointer !important;
+  padding: 6px 10px !important; /* Reduced from 8px 12px */
+  border-radius: 6px !important;
+  font-size: 14px !important; /* Reduced from 18px */
+  font-weight: 500 !important;
+  transition: all 0.2s !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important; /* Reduced from 6px */
+  white-space: nowrap !important;
+  margin-left: auto !important;
+}
+
+.teacher-edit-button:hover {
+  background-color: #e3f2fd !important;
+}
+
+.teacher-edit-button svg {
+  width: 14px !important; /* Reduced from 16px */
+  height: 14px !important; /* Reduced from 16px */
+}
+
+/* Tip */
+.teacher-info-tip {
+  margin-top: 16px !important; /* Reduced from 24px */
+  padding: 12px !important; /* Reduced from 16px */
+  background: #fff3cd !important;
+  border: 1px solid #ffeaa7 !important;
+  border-radius: 8px !important;
+  color: #856404 !important;
+  font-size: 14px !important; /* Reduced from 18px */
+  line-height: 1.4 !important; /* Reduced from 1.5 */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .teacher-profile-page {
+    padding: 0 12px; /* Reduced from 16px */
+  }
+
+  .teacher-profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px; /* Reduced from 16px */
+    padding: 16px 0 12px 0; /* Reduced from 20px 0 16px 0 */
+  }
+
+  .teacher-profile-title {
+    font-size: 20px; /* Reduced from 24px */
+  }
+
+  .teacher-avatar-placeholder {
+    width: 80px; /* Reduced from 100px */
+    height: 80px; /* Reduced from 100px */
+    font-size: 28px; /* Reduced from 36px */
+  }
+
+  .teacher-camera-button {
+    width: 24px; /* Reduced from 28px */
+    height: 24px; /* Reduced from 28px */
+  }
+
+  .teacher-camera-button svg {
+    width: 12px; /* Reduced from 14px */
+    height: 12px; /* Reduced from 14px */
+  }
+
+  .teacher-save-avatar-button {
+    padding: 4px 8px; /* Reduced from 6px 12px */
+    font-size: 10px; /* Reduced from 11px */
+  }
+
+  .teacher-security-status {
+    align-self: flex-end;
+  }
+
+  .teacher-info-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important; /* Reduced from 12px */
+    padding: 12px 0 !important; /* Reduced from 16px 0 */
+    min-height: auto !important;
+    position: relative !important;
+  }
+
+  .teacher-info-content {
+    align-items: flex-start !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  .teacher-info-label {
+    text-align: left !important;
+    position: static !important;
+  }
+
+  .teacher-info-value {
+    text-align: center !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    pointer-events: auto !important;
+  }
+
+  .teacher-info-actions {
+    align-self: flex-end !important;
+    margin-left: 0 !important;
+  }
+
+  .teacher-edit-button {
+    margin-left: 0 !important;
+  }
+
+  .teacher-copy-button {
+    margin-left: 0 !important;
+  }
+
+  .teacher-section-title {
+    font-size: 16px; /* Reduced from 18px */
+  }
+}
+
+@media (max-width: 480px) {
+  .teacher-profile-page {
+    padding: 0 8px; /* Reduced from 12px */
+  }
+
+  .teacher-info-item {
+    padding: 8px 0 !important; /* Reduced from 12px 0 */
+  }
+
+  .teacher-info-icon {
+    width: 28px !important; /* Reduced from 32px */
+    height: 28px !important; /* Reduced from 32px */
+    font-size: 14px !important; /* Reduced from 16px */
+  }
+
+  .teacher-info-icon svg {
+    width: 14px !important; /* Reduced from 16px */
+    height: 14px !important; /* Reduced from 16px */
+  }
+
+  .teacher-info-label {
+    font-size: 14px !important; /* Reduced from 16px */
+    text-align: left !important;
+  }
+
+  .teacher-info-value {
+    font-size: 14px !important; /* Reduced from 16px */
+    text-align: center !important;
+  }
+
+  .teacher-edit-button {
+    font-size: 12px !important; /* Reduced from 14px */
+    padding: 4px 8px !important; /* Reduced from 6px 10px */
+  }
+
+  .teacher-verify-badge {
+    font-size: 10px !important; /* Reduced from 12px */
+  }
+
+  .teacher-info-tip {
+    font-size: 12px !important; /* Reduced from 14px */
+  }
+}
+
+/* Edit Modal Styles */
+.teacher-profile-edit-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 1000 !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.teacher-profile-edit-modal {
+  background: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+  width: 90% !important;
+  max-width: 500px !important;
+  max-height: 90vh !important;
+  overflow: hidden !important;
+  animation: teacherProfileModalSlideIn 0.3s ease-out !important;
+}
+
+@keyframes teacherProfileModalSlideIn {
+  from {
+    opacity: 0 !important;
+    transform: translateY(-20px) scale(0.95) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+  }
+}
+
+.teacher-profile-edit-modal-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 24px 24px 16px 24px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.teacher-profile-edit-modal-header h3 {
+  margin: 0 !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.teacher-profile-close-button {
+  background: none !important;
+  border: none !important;
+  color: #666 !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s !important;
+  width: 36px !important;
+  height: 36px !important;
+}
+
+.teacher-profile-close-button:hover {
+  background: #f5f5f5 !important;
+  color: #333 !important;
+}
+
+.teacher-profile-close-button svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.teacher-profile-edit-modal-body {
+  padding: 24px !important;
+}
+
+.teacher-profile-edit-label {
+  display: block !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  margin-bottom: 12px !important;
+}
+
+.teacher-profile-edit-input {
+  width: 100% !important;
+  padding: 12px 16px !important;
+  border: 2px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  color: #333 !important;
+  background: #fff !important;
+  transition: border-color 0.2s !important;
+  box-sizing: border-box !important;
+}
+
+.teacher-profile-edit-input:focus {
+  outline: none !important;
+  border-color: #1976d2 !important;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1) !important;
+}
+
+.teacher-profile-edit-input::placeholder {
+  color: #999 !important;
+}
+
+.teacher-profile-edit-modal-footer {
+  display: flex !important;
+  gap: 12px !important;
+  padding: 16px 24px 24px 24px !important;
+  border-top: 1px solid #e0e0e0 !important;
+}
+
+.teacher-profile-cancel-button {
+  flex: 1 !important;
+  padding: 12px 24px !important;
+  border: 2px solid #e0e0e0 !important;
+  background: white !important;
+  color: #666 !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+.teacher-profile-cancel-button:hover:not(:disabled) {
+  border-color: #ccc !important;
+  background: #f9f9f9 !important;
+  color: #333 !important;
+}
+
+.teacher-profile-cancel-button:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+.teacher-profile-save-button {
+  flex: 1 !important;
+  padding: 12px 24px !important;
+  border: none !important;
+  background: #1976d2 !important;
+  color: white !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+.teacher-profile-save-button:hover:not(:disabled) {
+  background: #1565c0 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3) !important;
+}
+
+.teacher-profile-save-button:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .teacher-profile-edit-modal {
+    width: 95% !important;
+    margin: 20px !important;
+  }
+  
+  .teacher-profile-edit-modal-header {
+    padding: 20px 20px 12px 20px !important;
+  }
+  
+  .teacher-profile-edit-modal-header h3 {
+    font-size: 18px !important;
+  }
+  
+  .teacher-profile-edit-modal-body {
+    padding: 20px !important;
+  }
+  
+  .teacher-profile-edit-modal-footer {
+    padding: 12px 20px 20px 20px !important;
+  }
+  
+  .teacher-profile-edit-input {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+} 

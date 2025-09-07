@@ -1,0 +1,739 @@
+/* StudentProfilePage.css - Style cho trang hồ sơ cá nhân học sinh */
+
+.student-profile-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background: #fff;
+  height: calc(100vh - 64px);
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: fixed;
+  top: 64px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Header - Cố định */
+.student-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 12px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+  flex-shrink: 0;
+  z-index: 10;
+  margin: 0 -20px;
+}
+
+.student-back-button {
+  background: none;
+  border: none;
+  color: #1976d2;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.student-back-button:hover {
+  background-color: #f5f5f5;
+}
+
+.student-profile-title {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #666 !important;
+  margin: 0 !important;
+}
+
+.student-security-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #4caf50;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.student-security-icon {
+  font-size: 14px;
+}
+
+/* Content Container - Có thể cuộn */
+.student-profile-content-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 0 40px 0;
+  /* Hiển thị thanh cuộn */
+  scrollbar-width: thin; /* Firefox */
+  -ms-overflow-style: auto; /* Internet Explorer 10+ */
+  min-height: 0; /* Ensure flex child can shrink */
+}
+
+/* Tùy chỉnh thanh cuộn cho Webkit browsers (Chrome, Safari, Edge) */
+.student-profile-content-wrapper::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+}
+
+.student-profile-content-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.student-profile-content-wrapper::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.student-profile-content-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Avatar Section */
+.student-avatar-section {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+  flex-shrink: 0;
+}
+
+.student-main-avatar {
+  position: relative;
+  display: inline-block;
+}
+
+.student-avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  overflow: hidden;
+  position: relative;
+}
+
+.student-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.student-camera-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #333;
+  border: 2px solid #fff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.student-camera-button:hover {
+  background: #555;
+  transform: scale(1.05);
+}
+
+.student-camera-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.student-save-avatar-button {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  z-index: 10;
+}
+
+.student-save-avatar-button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+/* Content */
+.student-profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Section */
+.student-profile-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0;
+}
+
+.student-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.student-section-intro {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #1976d2;
+}
+
+/* Info Items */
+.student-info-item {
+  display: flex !important;
+  align-items: center !important;
+  padding: 14px 0 !important;
+  border-bottom: 1px solid #f0f0f0 !important;
+  gap: 12px !important;
+  min-height: 60px !important;
+  position: relative !important;
+}
+
+.student-info-item:last-child {
+  border-bottom: none !important;
+}
+
+.student-info-icon {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important;
+  color: white !important;
+  flex-shrink: 0 !important;
+}
+
+.student-info-icon svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Icon colors */
+.student-info-icon {
+  background: #2196f3 !important;
+}
+
+.student-phone-icon {
+  background: #2196f3 !important;
+}
+
+.student-email-icon {
+  background: #4caf50 !important;
+}
+
+.student-password-icon {
+  background: #f44336 !important;
+}
+
+.student-facebook-icon {
+  background: #1877f2 !important;
+}
+
+.student-name-icon {
+  background: #2196f3 !important;
+}
+
+.student-birth-icon {
+  background: #f44336 !important;
+}
+
+.student-location-icon {
+  background: #ff9800 !important;
+}
+
+.student-school-icon {
+  background: #4caf50 !important;
+}
+
+/* Info Content */
+.student-info-content {
+  flex: 1 !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+.student-info-label {
+  font-size: 16px !important;
+  color: #666 !important;
+  margin-bottom: 2px !important;
+  font-weight: 500 !important;
+  text-align: left !important;
+}
+
+.student-info-value {
+  font-size: 16px !important;
+  color: #333 !important;
+  font-weight: 500 !important;
+  text-align: center !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: auto !important;
+  max-width: 80% !important;
+  pointer-events: none !important;
+}
+
+/* Actions */
+.student-info-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+}
+
+.student-verify-badge {
+  background: #f44336 !important;
+  color: white !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.student-copy-button {
+  background: none !important;
+  border: none !important;
+  color: #666 !important;
+  cursor: pointer !important;
+  padding: 6px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+}
+
+.student-copy-button:hover {
+  background-color: #f5f5f5 !important;
+  color: #1976d2 !important;
+}
+
+.student-copy-button svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.student-edit-button {
+  background: none !important;
+  border: none !important;
+  color: #1976d2 !important;
+  cursor: pointer !important;
+  padding: 6px 10px !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  transition: all 0.2s !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  white-space: nowrap !important;
+  margin-left: auto !important;
+}
+
+.student-edit-button:hover {
+  background-color: #e3f2fd !important;
+}
+
+.student-edit-button svg {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+/* Tip */
+.student-info-tip {
+  margin-top: 16px !important;
+  padding: 12px !important;
+  background: #fff3cd !important;
+  border: 1px solid #ffeaa7 !important;
+  border-radius: 8px !important;
+  color: #856404 !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .student-profile-page {
+    padding: 0 12px;
+  }
+
+  .student-profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 0 12px 0;
+  }
+
+  .student-profile-title {
+    font-size: 20px;
+  }
+
+  .student-avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
+  }
+
+  .student-camera-button {
+    width: 24px;
+    height: 24px;
+  }
+
+  .student-camera-button svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .student-save-avatar-button {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .student-security-status {
+    align-self: flex-end;
+  }
+
+  .student-info-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding: 12px 0 !important;
+    min-height: auto !important;
+    position: relative !important;
+  }
+
+  .student-info-content {
+    align-items: flex-start !important;
+    width: 100% !important;
+    position: relative !important;
+  }
+
+  .student-info-label {
+    text-align: left !important;
+    position: static !important;
+  }
+
+  .student-info-value {
+    text-align: center !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    pointer-events: auto !important;
+  }
+
+  .student-info-actions {
+    align-self: flex-end !important;
+    margin-left: 0 !important;
+  }
+
+  .student-edit-button {
+    margin-left: 0 !important;
+  }
+
+  .student-copy-button {
+    margin-left: 0 !important;
+  }
+
+  .student-section-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-profile-page {
+    padding: 0 8px;
+  }
+
+  .student-info-item {
+    padding: 8px 0 !important;
+  }
+
+  .student-info-icon {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 14px !important;
+  }
+
+  .student-info-icon svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .student-info-label {
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+
+  .student-info-value {
+    font-size: 14px !important;
+    text-align: center !important;
+  }
+
+  .student-edit-button {
+    font-size: 12px !important;
+    padding: 4px 8px !important;
+  }
+
+  .student-verify-badge {
+    font-size: 10px !important;
+  }
+
+  .student-info-tip {
+    font-size: 12px !important;
+  }
+}
+
+/* Edit Modal Styles */
+.student-profile-edit-modal-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 1000 !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.student-profile-edit-modal {
+  background: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+  width: 90% !important;
+  max-width: 500px !important;
+  max-height: 90vh !important;
+  overflow: hidden !important;
+  animation: studentProfileModalSlideIn 0.3s ease-out !important;
+}
+
+@keyframes studentProfileModalSlideIn {
+  from {
+    opacity: 0 !important;
+    transform: translateY(-20px) scale(0.95) !important;
+  }
+  to {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+  }
+}
+
+.student-profile-edit-modal-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 24px 24px 16px 24px !important;
+  border-bottom: 1px solid #e0e0e0 !important;
+}
+
+.student-profile-edit-modal-header h3 {
+  margin: 0 !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  color: #333 !important;
+}
+
+.student-profile-close-button {
+  background: none !important;
+  border: none !important;
+  color: #666 !important;
+  cursor: pointer !important;
+  padding: 8px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s !important;
+  width: 36px !important;
+  height: 36px !important;
+}
+
+.student-profile-close-button:hover {
+  background: #f5f5f5 !important;
+  color: #333 !important;
+}
+
+.student-profile-close-button svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.student-profile-edit-modal-body {
+  padding: 24px !important;
+}
+
+.student-profile-edit-label {
+  display: block !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #333 !important;
+  margin-bottom: 12px !important;
+}
+
+.student-profile-edit-input {
+  width: 100% !important;
+  padding: 12px 16px !important;
+  border: 2px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  color: #333 !important;
+  background: #fff !important;
+  transition: border-color 0.2s !important;
+  box-sizing: border-box !important;
+}
+
+.student-profile-edit-input:focus {
+  outline: none !important;
+  border-color: #1976d2 !important;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1) !important;
+}
+
+.student-profile-edit-input::placeholder {
+  color: #999 !important;
+}
+
+.student-profile-edit-modal-footer {
+  display: flex !important;
+  gap: 12px !important;
+  padding: 16px 24px 24px 24px !important;
+  border-top: 1px solid #e0e0e0 !important;
+}
+
+.student-profile-cancel-button {
+  flex: 1 !important;
+  padding: 12px 24px !important;
+  border: 2px solid #e0e0e0 !important;
+  background: white !important;
+  color: #666 !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+.student-profile-cancel-button:hover:not(:disabled) {
+  border-color: #ccc !important;
+  background: #f9f9f9 !important;
+  color: #333 !important;
+}
+
+.student-profile-cancel-button:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+.student-profile-save-button {
+  flex: 1 !important;
+  padding: 12px 24px !important;
+  border: none !important;
+  background: #1976d2 !important;
+  color: white !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+}
+
+.student-profile-save-button:hover:not(:disabled) {
+  background: #1565c0 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3) !important;
+}
+
+.student-profile-save-button:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .student-profile-edit-modal {
+    width: 95% !important;
+    margin: 20px !important;
+  }
+  
+  .student-profile-edit-modal-header {
+    padding: 20px 20px 12px 20px !important;
+  }
+  
+  .student-profile-edit-modal-header h3 {
+    font-size: 18px !important;
+  }
+  
+  .student-profile-edit-modal-body {
+    padding: 20px !important;
+  }
+  
+  .student-profile-edit-modal-footer {
+    padding: 12px 20px 20px 20px !important;
+  }
+  
+  .student-profile-edit-input {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+}

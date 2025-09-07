@@ -1,0 +1,422 @@
+/** MeetingDetail.css - Style giống ảnh mẫu **/
+
+.meeting-detail-bg {
+  min-height: 100vh;
+  background: #f6f8fb;
+  display: flex;
+  flex-direction: column;
+}
+
+.meeting-detail-breadcrumb-header {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e0e3e7;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  z-index: 9;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 4px 0 rgba(30,136,229,0.03);
+}
+
+.meeting-detail-breadcrumb-row {
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  height: 56px;
+  font-size: 15px;
+}
+.breadcrumb-link {
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: text-decoration 0.2s, color 0.2s;
+}
+.breadcrumb-link:hover {
+  text-decoration: underline;
+  color: #1565c0;
+}
+.breadcrumb-sep {
+  margin: 0 12px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid #8a94a6;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  display: inline-block;
+}
+.breadcrumb-current {
+  color: #1e88e5;
+  font-weight: 700;
+}
+
+.meeting-detail-main {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  padding: 0;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  flex: 1 1 0;
+  margin-top: 104px;
+  min-height: 0;
+  height: calc(100vh - 104px);
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+}
+
+.meeting-detail-main::after {
+  content: '';
+  position: absolute;
+  left: 30%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #e0e3e7;
+  z-index: 1;
+}
+
+.gray-bg {
+  background: #f3f6fa;
+}
+
+.meeting-detail-info-card-mui {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: 0 2px 8px 0 rgba(30,136,229,0.08);
+  padding: 28px 24px 20px 24px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  width: 30%;
+  height: auto;
+  position: static;
+  align-self: flex-start;
+}
+.meeting-detail-info-label-mui {
+  font-size: 15px;
+  color: #1e88e5;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.meeting-detail-info-title-mui {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 28px 0;
+  color: #222;
+  line-height: 1.2;
+}
+.meeting-detail-info-row-mui {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+.meeting-detail-info-row-label-mui {
+  font-size: 16px;
+  color: #8a94a6;
+  font-weight: 500;
+}
+.meeting-detail-info-row-value-mui {
+  font-size: 17px;
+  font-weight: 700;
+  color: #222;
+}
+.meeting-detail-end-btn-mui {
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  width: 100%;
+  background: #1e88e5;
+  color: #fff;
+  padding: 18px 0;
+  border: none;
+  margin-top: 24px;
+  box-shadow: 0 2px 8px 0 rgba(30,136,229,0.08);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.meeting-detail-end-btn-mui:hover {
+  background: #1565c0;
+}
+
+.meeting-detail-content-mui {
+  flex: 0 0 70%;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: calc(100vh - 104px);
+  width: 100%;
+  overflow-y: auto;
+}
+.meeting-detail-toolbar-mui {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 32px 36px 18px 36px;
+}
+.meeting-detail-search-mui {
+  position: relative;
+  flex: 1;
+}
+.meeting-detail-search-mui input {
+  width: 100%;
+  padding: 12px 16px 12px 44px;
+  border-radius: 8px;
+  border: 1.5px solid #d8dcf0;
+  font-size: 16px;
+  background: #fff;
+  outline: none;
+}
+.meeting-detail-search-icon-mui {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #b0b8c1;
+}
+.meeting-detail-print-btn-mui {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #d8dcf0;
+  border-radius: 8px;
+  background: #fff;
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.meeting-detail-print-btn-mui:hover {
+  background: #f0f4fa;
+}
+
+.meeting-detail-tabs-mui {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 0 36px 0 36px;
+}
+.meeting-detail-tabs-mui .tab {
+  padding: 8px 22px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #f3f6fa;
+  color: #222;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.meeting-detail-tabs-mui .tab.active {
+  background: #1e88e5;
+  color: #fff;
+}
+
+.meeting-detail-empty-mui {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  height: 100%;
+}
+.meeting-detail-empty-mui img {
+  height: 40vh;
+  max-height: 400px;
+  max-width: 400px;
+  object-fit: contain;
+  margin: 32px auto;
+}
+.meeting-detail-empty-title-mui {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.meeting-detail-empty-desc-mui {
+  font-size: 16px;
+  color: #8a94a6;
+  text-align: center;
+}
+
+/* Check-in Button */
+.meeting-detail-checkin-btn-mui {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1e88e5;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 16px;
+}
+
+.meeting-detail-checkin-btn-mui:hover {
+  background: #1565c0;
+}
+
+/* Table Styles */
+.meeting-detail-table-container-mui {
+  flex: 1;
+  overflow-y: auto;
+  border: none;
+  border-radius: 0;
+  background: white;
+  resize: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.meeting-detail-table-header-mui {
+  display: grid;
+  grid-template-columns: 50px 2fr 1fr 1.5fr;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e3e7;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-radius: 0;
+  resize: none;
+}
+
+.meeting-detail-table-body-mui {
+  max-height: calc(100vh - 350px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+.meeting-detail-table-body-mui::-webkit-scrollbar {
+  width: 8px;
+}
+
+.meeting-detail-table-body-mui::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.meeting-detail-table-body-mui::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.meeting-detail-table-body-mui::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.meeting-detail-table-row-mui {
+  display: grid;
+  grid-template-columns: 50px 2fr 1fr 1.5fr;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.2s;
+}
+
+.meeting-detail-table-row-mui:hover {
+  background: #f8f9fa;
+}
+
+.meeting-detail-table-cell-mui {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: #333;
+}
+
+.meeting-detail-table-cell-mui.header-cell {
+  font-weight: 600;
+  color: #666;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  resize: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.meeting-detail-table-cell-mui.header-cell svg {
+  color: #999;
+  cursor: pointer;
+}
+
+.meeting-detail-table-cell-mui input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.meeting-detail-student-avatar-mui {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1e88e5;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.meeting-detail-student-name-mui {
+  font-weight: 500;
+  color: #333;
+}
+
+@media (max-width: 900px) {
+  .meeting-detail-main {
+    flex-direction: column;
+    padding: 0;
+    margin-top: 104px;
+    height: auto;
+    width: 100vw;
+    max-width: 100vw;
+  }
+  .meeting-detail-info-card-mui {
+    max-width: 100%;
+    min-width: 0;
+    margin-bottom: 0;
+    position: static;
+    height: auto;
+    border-radius: 0;
+    width: 100%;
+  }
+  .meeting-detail-content-mui {
+    padding: 18px 8px;
+    height: auto;
+    border-radius: 0;
+    flex: 1 1 0;
+    width: 100%;
+  }
+  .meeting-detail-empty-mui {
+    height: auto;
+  }
+}

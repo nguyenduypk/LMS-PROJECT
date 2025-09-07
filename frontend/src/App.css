@@ -1,0 +1,14 @@
+body, #root, .App {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  min-height: 100vh;
+  background: #f7fafd;
+}
+
+/* Xóa các style mặc định của CRA */
+.App-logo, .App-header, .App-link {
+  display: none;
+}

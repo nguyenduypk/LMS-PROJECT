@@ -1,0 +1,147 @@
+.teacher-sidebar {
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.teacher-sidebar__scroll-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.teacher-sidebar__class-info {
+  margin-bottom: 30px;
+}
+
+.teacher-sidebar__class-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.teacher-sidebar__class-code {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.teacher-sidebar__share-title {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.teacher-sidebar__share-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.teacher-sidebar__share-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  background: #f9f9f9;
+  margin-right: 8px;
+}
+
+.teacher-sidebar__share-copy-btn {
+  padding: 8px;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #666;
+}
+
+.teacher-sidebar__share-copy-btn:hover {
+  background: #e0e0e0;
+}
+
+.teacher-sidebar__desc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.teacher-sidebar__desc-label {
+  font-size: 14px;
+  color: #333;
+}
+
+.teacher-sidebar__add-desc {
+  background: none;
+  border: none;
+  color: #1976d2;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.teacher-sidebar__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.teacher-sidebar__menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.teacher-sidebar__menu-item:hover {
+  background: #f5f5f5;
+}
+
+.teacher-sidebar__menu-item.active {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.teacher-sidebar__icon {
+  margin-right: 12px;
+  color: inherit;
+}
+
+.sidebar-settings-btn {
+  padding: 16px 20px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.sidebar-settings-btn:hover {
+  background: #f5f5f5;
+}
+
+.sidebar-settings-btn__icon {
+  margin-right: 12px;
+  color: #666;
+}
+
+.sidebar-settings-btn__label {
+  font-size: 14px;
+  color: #333;
+} 

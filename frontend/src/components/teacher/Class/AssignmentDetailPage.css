@@ -1,0 +1,521 @@
+/* Main Layout */
+.teacher-assignment-detail-page {
+  min-height: 100vh;
+  background-color: white;
+  padding-top: 64px;
+}
+
+.teacher-assignment-detail-page__content {
+  display: flex;
+  min-height: calc(100vh - 64px);
+  background-color: white;
+}
+
+.teacher-assignment-detail-page__main {
+  flex: 1;
+  margin-left: 260px;
+  padding: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .teacher-assignment-detail-page__main {
+    margin-left: 0;
+  }
+}
+
+/* Header Content */
+.teacher-assignment-detail-page__header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0;
+  z-index: 100;
+  position: sticky;
+  top: 64px;
+}
+
+.teacher-assignment-detail-page__header-content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 24px 8px;
+}
+
+.teacher-assignment-detail-page__class-title {
+  margin-bottom: 12px;
+}
+
+.teacher-assignment-detail-page__class-title h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.teacher-assignment-detail-page__header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Breadcrumb */
+.teacher-assignment-detail-page__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.teacher-assignment-detail-page__breadcrumb-item {
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.teacher-assignment-detail-page__breadcrumb-item:hover {
+  color: #1976d2;
+}
+
+.teacher-assignment-detail-page__breadcrumb-item.active {
+  color: #333;
+  font-weight: 500;
+  cursor: default;
+}
+
+.teacher-assignment-detail-page__breadcrumb-item.active:hover {
+  color: #333;
+}
+
+.teacher-assignment-detail-page__breadcrumb-arrow,
+.score-detail-breadcrumb-separator {
+  color: #888;
+  width: 16px;
+  height: 16px;
+  margin: 0 4px;
+  vertical-align: middle;
+}
+
+.score-detail-dropdown-arrow {
+  color: #222;
+  transition: transform 0.2s ease;
+}
+.score-detail-dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+/* Tabs Navigation */
+.teacher-assignment-detail-page__tabs {
+  display: flex;
+  gap: 12px;
+  background: white;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.teacher-assignment-detail-page__tab {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+  border-radius: 0;
+  border-bottom: 2px solid transparent;
+  min-width: 100px;
+}
+
+.teacher-assignment-detail-page__tab:hover {
+  color: #1976d2;
+  border-bottom-color: #1976d2;
+}
+
+.teacher-assignment-detail-page__tab.active {
+  background: transparent;
+  color: #1976d2;
+  border-bottom: 2px solid #1976d2;
+}
+
+.teacher-assignment-detail-page__tab.active:hover {
+  color: #1976d2;
+}
+
+/* Tab Content */
+.teacher-assignment-detail-page__overview,
+.teacher-assignment-detail-page__assignment,
+.teacher-assignment-detail-page__question-stats {
+  background: white;
+  border-radius: 0;
+  padding: 24px;
+  box-shadow: none;
+  border-top: none;
+  flex: 1;
+}
+
+.teacher-assignment-detail-page__overview h3,
+.teacher-assignment-detail-page__assignment h3,
+.teacher-assignment-detail-page__question-stats h3 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.teacher-assignment-detail-page__overview p,
+.teacher-assignment-detail-page__assignment p,
+.teacher-assignment-detail-page__question-stats p {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Toolbar */
+.teacher-assignment-detail-page__toolbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 0;
+  padding: 20px 24px;
+  background: white;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Filter Buttons */
+.teacher-assignment-detail-page__filters {
+  display: flex;
+  gap: 8px;
+}
+
+.teacher-assignment-detail-page__filter-btn {
+  padding: 6px 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  color: #666;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teacher-assignment-detail-page__filter-btn:hover {
+  border-color: #1976d2;
+  color: #1976d2;
+}
+
+.teacher-assignment-detail-page__filter-btn.active {
+  background: #1976d2;
+  color: white;
+  border-color: #1976d2;
+}
+
+/* Search */
+.teacher-assignment-detail-page__search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  flex: 1;
+  max-width: 300px;
+  height: 36px;
+}
+
+.teacher-assignment-detail-page__search-icon {
+  width: 20px;
+  height: 20px;
+  color: #666;
+}
+
+.teacher-assignment-detail-page__search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #333;
+  width: 100%;
+  height: 100%;
+}
+
+.teacher-assignment-detail-page__search-input::placeholder {
+  color: #999;
+}
+
+/* Print Button */
+.teacher-assignment-detail-page__print-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 18px;
+}
+
+.teacher-assignment-detail-page__print-btn:hover {
+  border-color: #1976d2;
+  color: #1976d2;
+}
+
+/* Table */
+.teacher-assignment-detail-page__table-container {
+  background: white;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+  border-top: none;
+  flex: 1;
+}
+
+.teacher-assignment-detail-page__table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.teacher-assignment-detail-page__table thead {
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e7ef;
+}
+
+.teacher-assignment-detail-page__table th {
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #e0e7ef;
+}
+
+.teacher-assignment-detail-page__table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #f0f2f5;
+  font-size: 14px;
+  color: #333;
+}
+
+.teacher-assignment-detail-page__table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.teacher-assignment-detail-page__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Sortable columns */
+.teacher-assignment-detail-page__sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.teacher-assignment-detail-page__sortable:hover {
+  color: #1976d2;
+}
+
+/* Select all checkbox */
+.teacher-assignment-detail-page__select-all {
+  width: 20px;
+  height: 20px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.teacher-assignment-detail-page__select-all:hover {
+  color: #1976d2;
+}
+
+/* Individual checkboxes */
+.teacher-assignment-detail-page__select-checkbox {
+  width: 20px;
+  height: 20px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.teacher-assignment-detail-page__select-checkbox:hover {
+  color: #1976d2;
+}
+
+/* Student info */
+.teacher-assignment-detail-page__student-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.teacher-assignment-detail-page__student-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e3f2fd;
+  color: #1976d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.teacher-assignment-detail-page__student-name {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Score */
+.teacher-assignment-detail-page__score {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Actions */
+.teacher-assignment-detail-page__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.teacher-assignment-detail-page__refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: white;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.teacher-assignment-detail-page__refresh-btn:hover {
+  border-color: #1976d2;
+  color: #1976d2;
+}
+
+.teacher-assignment-detail-page__details-btn {
+  padding: 6px 12px;
+  border: 1px solid #1976d2;
+  border-radius: 6px;
+  background: #1976d2;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.teacher-assignment-detail-page__details-btn:hover {
+  background: #1565c0;
+  border-color: #1565c0;
+} 
+
+/* Score Distribution Table */
+.score-distribution-table-container {
+  margin: 0 0 32px 0;
+  overflow-x: auto;
+}
+.score-distribution-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.score-distribution-table th,
+.score-distribution-table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 6px;
+  text-align: center;
+  min-width: 48px;
+}
+.score-distribution-table th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+.score-distribution-table td {
+  color: #333;
+}
+
+/* Score Distribution Chart */
+.score-distribution-chart-container {
+  margin-top: 32px;
+  padding-bottom: 24px;
+}
+.score-distribution-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 12px;
+}
+.score-distribution-chart-legend-color {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: #2196f3;
+  border-radius: 3px;
+}
+.score-distribution-chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  height: 120px;
+  padding: 0 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.score-distribution-chart-bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 32px;
+}
+.score-distribution-chart-bar {
+  width: 24px;
+  background: #2196f3;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.3s;
+  margin-bottom: 4px;
+}
+.score-distribution-chart-label {
+  font-size: 13px;
+  color: #666;
+  margin-top: 4px;
+  text-align: center;
+} 
+.score-distribution-chart-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 16px;
+  margin-top: 8px;
+  text-align: left;
+} 

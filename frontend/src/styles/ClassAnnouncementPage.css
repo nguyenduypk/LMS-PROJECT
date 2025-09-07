@@ -1,0 +1,181 @@
+/* ClassAnnouncement Layout */
+.class-announcement-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* khóa theo viewport giống GV */
+  overflow: hidden; /* ẩn scrollbar ngoài */
+  overflow-x: hidden; /* tránh cuộn ngang ẩn */
+  background-color: #f0f2f5 !important;
+  padding-top: 64px; /* Để tránh bị header che */
+}
+
+/* Đảm bảo các khối con trong card chiếm đủ chiều ngang */
+.announcement-card > *,
+.announcement-card .comment-section,
+.announcement-card .comment-form,
+.announcement-card .comments-list,
+.announcement-card .comment-form__textarea { width: 100% !important; }
+
+.class-announcement-page__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 260px; /* Match ClassSidebar width exactly */
+  background-color: #f0f2f5 !important; /* đồng bộ với trang GV */
+  position: relative;
+  padding-top: 88px;
+  /* cho phần nội dung cuộn, header cố định giống GV */
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  overflow-x: hidden; /* tránh cuộn ngang ẩn */
+  overscroll-behavior: contain; /* tránh cuộn lồng gây scrollbar ẩn */
+  padding-bottom: 24px; /* tránh bị cắt cuối trang khi cuộn */
+  /* Ẩn scrollbar đa trình duyệt */
+  -ms-overflow-style: none; /* IE & Legacy Edge */
+  scrollbar-width: none; /* Firefox */
+  /* Remove border-radius to avoid shadow overlap */
+}
+
+/* Chrome, Safari, new Edge */
+.class-announcement-page__content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.class-announcement-page__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f2f5;
+  position: relative;
+  min-height: auto; /* tránh làm tăng chiều cao tổng gây scrollbar ngoài */
+}
+
+.class-announcement-page__header {
+  padding: 24px 24px 16px;
+  background-color: white;
+  z-index: 100;
+  position: fixed;
+  top: 64px;
+  left: 260px;
+  right: 0;
+  width: calc(100% - 260px);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.class-announcement-page__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+@media (max-width: 1024px) {
+  .class-announcement-page__header {
+    left: 260px;
+    width: calc(100% - 260px);
+  }
+  .class-announcement-page__content {
+    margin-left: 260px;
+  }
+}
+
+@media (max-width: 900px) {
+  .class-announcement-page__header {
+    left: 0;
+    width: 100%;
+  }
+  .class-announcement-page__content {
+    margin-left: 0;
+  }
+} 
+
+.announcement-list {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px auto 24px auto;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.class-announcement-page .announcement-card {
+  width: 100%;
+  background: #fff !important;
+  border: 1px solid #d8dce0 !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  box-shadow: none !important;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch !important; /* cho child giãn full width giống trang GV */
+}
+
+.class-announcement-page .announcement-card:hover { box-shadow: none !important; }
+
+.announcement-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px; /* giống teacher */
+}
+
+.announcement-avatar {
+  width: 42px; /* giống teacher */
+  height: 42px; /* giống teacher */
+  border-radius: 50%;
+  background: #e0e0e0;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.announcement-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #222;
+}
+
+.announcement-time {
+  font-size: 12px; /* giống teacher */
+  color: #888;
+  margin-top: 2px;
+}
+
+.announcement-menu {
+  margin-left: auto;
+  font-size: 20px;
+  color: #888;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.announcement-menu:hover {
+  background-color: #f5f5f5;
+}
+
+.class-announcement-page .announcement-content {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 8px 0;
+  word-break: break-word;
+  white-space: pre-wrap;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+body, html, .class-announcement-page, .announcement-list, .announcement-card {
+  font-family: 'Segoe UI', Arial, sans-serif !important;
+  font-size: 15px !important;
+  color: #222 !important;
+}
+.class-announcement-page__title, .announcement-name, h1 {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #222 !important;
+} 

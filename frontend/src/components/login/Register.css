@@ -1,0 +1,199 @@
+/* Page wrapper for signup screens */
+.signup-page {
+    background: #f3f4f6; /* light gray like other pages */
+    min-height: 100vh;
+    padding: 40px 0; /* space above and below the card */
+}
+
+.signup-wrapper {
+    max-width: 460px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px 20px 40px 20px; /* add top padding for breathing room */
+    background: #ffffff;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.signup-form h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.signup-form input,
+.signup-form select {
+    width: 100%;
+    padding: 12px 12px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.form-row {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+/* Use for rows that contain a single full-width field */
+.form-row.single {
+    display: block;
+}
+
+/* Lớp chiếm 1 phần */
+.col-1-2 {
+    flex: 1;
+    /* nhỏ hơn */
+}
+
+/* Lớp chiếm toàn bộ */
+.col-1-1 {
+    flex: 1;
+    width: 100%;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #1976d2;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.login-note {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 13px;
+}
+
+.login-note a {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+input::placeholder {
+    color: #9ca3af;
+}
+
+input[type="date"]:not(:focus):not(:valid) {
+    color: #9ca3af;
+}
+
+select:invalid {
+    color: #9ca3af;
+}
+
+/* Success page styles */
+.success-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.success-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.success-title {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.success-details {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.success-details p {
+  margin: 10px 0;
+  color: #495057;
+}
+
+.success-message {
+  margin-bottom: 30px;
+  color: #6c757d;
+}
+
+.success-message p {
+  margin: 8px 0;
+}
+
+.success-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #545b62;
+}
+
+.success-note {
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  padding: 15px;
+  color: #856404;
+}
+
+.success-note p {
+  margin: 0;
+  font-size: 14px;
+}

@@ -1,0 +1,146 @@
+.role-select-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f6faff;
+  padding: 32px 8px;
+}
+.role-select-title {
+  font-size: 2.2rem;
+  color: #1976d2;
+  font-weight: 800;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.role-select-options {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 700px;
+  justify-content: center;
+}
+.role-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(25, 118, 210, 0.08);
+  padding: 40px 32px 32px 32px;
+  flex: 1 1 240px;
+  min-width: 220px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s, border 0.2s;
+  border: 2px solid transparent;
+  outline: none;
+}
+.role-card:focus, .role-card:hover {
+  box-shadow: 0 4px 32px rgba(25, 118, 210, 0.16);
+  border: 2px solid #1976d2;
+  transform: translateY(-4px) scale(1.03);
+}
+.role-icon {
+  font-size: 3.5rem;
+  margin-bottom: 18px;
+}
+.role-label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 10px;
+}
+.role-desc {
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+}
+.role-switch-link {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 1rem;
+  color: #1976d2;
+}
+.role-switch-link a {
+  color: #1976d2;
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.role-switch-link a:hover {
+  color: #125ea2;
+}
+@media (max-width: 700px) {
+  .role-select-options {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  .role-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+.teacher-signup-form {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(25, 118, 210, 0.07);
+  padding: 20px 24px 14px 24px;
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.signup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+.signup-field label {
+  font-weight: 600;
+  color: #1976d2;
+  margin-bottom: 0;
+  font-size: 0.97rem;
+}
+.signup-field input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #c2d7f5;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+  background: #f6faff;
+}
+.signup-field input:focus {
+  border: 1px solid #1976d2;
+  background: #e3f0fd;
+}
+.input-error {
+  border: 1px solid #e53935 !important;
+  background: #fff6f6 !important;
+}
+.signup-error {
+  color: #e53935;
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-left: 2px;
+}
+.signup-btn {
+  margin-top: 8px;
+  width: 100%;
+  font-size: 1rem;
+  padding: 8px 0;
+  border-radius: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+@media (max-width: 600px) {
+  .teacher-signup-form {
+    padding: 8px 6vw 8px 6vw;
+    max-width: 98vw;
+  }
+} 

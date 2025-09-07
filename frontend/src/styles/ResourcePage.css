@@ -1,0 +1,132 @@
+/* ResourcePage Styles */
+.resource-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-page__content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.resource-page__header {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.resource-page__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.resource-page__main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.resource-list {
+  display: grid;
+  gap: 16px;
+}
+
+.resource-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.resource-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.resource-item__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.resource-item__type {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.resource-item__type--document {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.resource-item__type--video {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.resource-item__type--quiz {
+  background: #e8f5e8;
+  color: #2e7d32;
+}
+
+.resource-item__description {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.resource-item__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resource-item__stats {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  color: #666;
+}
+
+.resource-item__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.resource-action-btn {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.resource-action-btn:hover {
+  background: #f5f5f5;
+}
+
+.resource-action-btn--primary {
+  background: #1976d2;
+  color: #fff;
+  border-color: #1976d2;
+}
+
+.resource-action-btn--primary:hover {
+  background: #1565c0;
+} 

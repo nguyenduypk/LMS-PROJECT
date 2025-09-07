@@ -1,0 +1,200 @@
+.member-detail-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.member-detail-page__content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.member-detail-page__header {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.member-detail-page__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.member-detail-page__main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.member-profile {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.member-profile__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.member-profile__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #1976d2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 32px;
+  margin-right: 24px;
+}
+
+.member-profile__info {
+  flex: 1;
+}
+
+.member-profile__name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.member-profile__email {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.member-profile__role {
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.member-profile__role--teacher {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.member-profile__role--student {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.member-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.member-stat-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.member-stat-card__title {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.member-stat-card__value {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.member-activity {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.member-activity__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.activity-list {
+  display: grid;
+  gap: 12px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background: #f8f9fa;
+}
+
+.activity-item__icon {
+  margin-right: 12px;
+  color: #1976d2;
+}
+
+.activity-item__content {
+  flex: 1;
+}
+
+.activity-item__title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.activity-item__date {
+  font-size: 12px;
+  color: #666;
+}
+
+.member-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+}
+
+.member-action-btn {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.member-action-btn:hover {
+  background: #f5f5f5;
+}
+
+.member-action-btn--danger {
+  background: #ffebee;
+  color: #c62828;
+  border-color: #c62828;
+}
+
+.member-action-btn--danger:hover {
+  background: #ffcdd2;
+} 

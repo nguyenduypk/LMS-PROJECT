@@ -1,0 +1,132 @@
+/* AssignmentPage Styles */
+.assignment-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.assignment-page__content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.assignment-page__header {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.assignment-page__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.assignment-page__main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.assignment-list {
+  display: grid;
+  gap: 16px;
+}
+
+.assignment-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.assignment-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.assignment-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.assignment-item__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.assignment-item__due-date {
+  font-size: 14px;
+  color: #666;
+}
+
+.assignment-item__status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.assignment-item__status--active {
+  background: #e8f5e8;
+  color: #2e7d32;
+}
+
+.assignment-item__status--expired {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.assignment-item__description {
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.assignment-item__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assignment-item__stats {
+  display: flex;
+  gap: 16px;
+  font-size: 14px;
+  color: #666;
+}
+
+.assignment-item__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.assignment-action-btn {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.assignment-action-btn:hover {
+  background: #f5f5f5;
+}
+
+.assignment-action-btn--primary {
+  background: #1976d2;
+  color: #fff;
+  border-color: #1976d2;
+}
+
+.assignment-action-btn--primary:hover {
+  background: #1565c0;
+} 

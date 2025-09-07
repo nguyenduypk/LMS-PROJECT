@@ -1,0 +1,333 @@
+.user-dropdown-trigger {
+  gap: 8px; /* space between user-info and arrow */
+}
+.user-dropdown-trigger .user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.user-dropdown-trigger .user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+/* Teacher Header - Clean and Simple Design */
+
+.teacher-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Restore space-between for three columns */
+  padding: 16px 24px;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 64px;
+  min-height: 64px;
+  max-height: 64px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Left Section */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-shrink: 0;
+  min-width: 220px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1976d2;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Center nav-tabs absolutely in the header */
+.nav-tabs {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  z-index: 2;
+}
+
+.nav-tab {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  padding: 8px 24px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+  white-space: nowrap;
+  min-width: 120px;
+  max-width: 120px;
+  text-align: center;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-tab.active {
+  background: #e3f2fd;
+  color: #1976d2;
+  /* font-weight: 600;  // Đã là 600 ở trên, không đổi để không bị nhảy */
+}
+
+.nav-tab:hover {
+  background: #f5f5f5;
+  color: #1976d2;
+}
+
+/* Right Section */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  min-width: 220px;
+  justify-content: flex-end;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background: #1976d2;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.dropdown-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.dropdown-trigger {
+  background: none;
+  border: none;
+  font-size: 12px;
+  color: #666;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.dropdown-trigger:hover {
+  background: #f5f5f5;
+}
+
+/* Arrow like student header */
+.dropdown-arrow {
+  width: 20px;
+  height: 20px;
+  color: #666;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+  color: #1976d2;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 300px;
+  z-index: 1001;
+  margin-top: 8px;
+}
+
+.dropdown-header {
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.student-count {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.teacher-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2px;
+}
+
+.teacher-role {
+  font-size: 14px;
+  color: #1976d2;
+  margin-bottom: 8px;
+}
+
+.teacher-contact {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 0;
+}
+
+.student-limit {
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #666;
+}
+
+.dropdown-link {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #1976d2;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-link:hover {
+  background: #f5f5f5;
+}
+
+.dropdown-desc {
+  padding: 0 16px 12px 16px;
+  font-size: 12px;
+  color: #999;
+}
+
+.dropdown-item {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .teacher-header {
+    padding: 12px 16px;
+    height: 64px;
+    min-height: 64px;
+    max-height: 64px;
+  }
+
+  .header-left {
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav-tabs {
+    gap: 12px;
+  }
+
+  .nav-tab {
+    font-size: 14px;
+    padding: 6px 12px;
+    min-width: 60px;
+    height: 36px;
+  }
+
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .user-name {
+    font-size: 14px;
+  }
+
+  .user-role {
+    font-size: 12px;
+  }
+
+  .dropdown-trigger {
+    width: 28px;
+    height: 28px;
+  }
+}

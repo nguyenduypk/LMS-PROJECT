@@ -1,0 +1,52 @@
+/* Reusable marquee-like scrolling notice */
+.scrolling-notice {
+  margin: 8px 32px 0 32px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.scrolling-notice__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scrolling-notice__track {
+  display: flex;
+  white-space: nowrap;
+  animation: scrolling-notice-marquee var(--marquee-duration, 18s) linear infinite;
+  will-change: transform;
+}
+
+/* Ticker chạy tuần tự từng thông báo (không lặp vô hạn trong 1 lượt) */
+.scrolling-notice__track--ticker {
+  animation: scrolling-notice-ticker var(--marquee-duration, 18s) linear 1 forwards;
+}
+
+.scrolling-notice__text {
+  padding: 10px 16px;
+  font-size: 14px;
+  line-height: 20px;
+  display: inline-block;
+}
+
+.scrolling-notice__spacer {
+  display: inline-block;
+  width: 48px; /* khoảng cách ổn định giữa hai bản sao */
+}
+
+.scrolling-notice__link {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+@keyframes scrolling-notice-marquee {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes scrolling-notice-ticker {
+  0%   { transform: translate3d(var(--start, 100%), 0, 0); }
+  100% { transform: translate3d(var(--end, -100%), 0, 0); }
+}

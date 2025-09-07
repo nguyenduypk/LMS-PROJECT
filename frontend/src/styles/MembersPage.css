@@ -1,0 +1,117 @@
+/* MembersPage Styles */
+.members-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.members-page__content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.members-page__header {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.members-page__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.members-page__main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.members-list {
+  display: grid;
+  gap: 16px;
+}
+
+.member-item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.member-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.member-item__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #1976d2;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 16px;
+}
+
+.member-item__info {
+  flex: 1;
+}
+
+.member-item__name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.member-item__email {
+  font-size: 14px;
+  color: #666;
+}
+
+.member-item__role {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 12px;
+}
+
+.member-item__role--teacher {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.member-item__role--student {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.member-item__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.member-action-btn {
+  padding: 8px;
+  border: none;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #666;
+  transition: background-color 0.2s;
+}
+
+.member-action-btn:hover {
+  background: #f5f5f5;
+} 

@@ -1,0 +1,268 @@
+/* Class Sidebar Styles */
+.class-sidebar {
+  width: 260px;
+  background: #fff;
+  position: fixed;
+  top: 64px !important;
+  left: 0;
+  height: calc(100vh - 64px);
+  /* Loại bỏ box-shadow, border-radius; border phải đồng bộ màu */
+  box-shadow: none !important;
+  border-right: 1px solid #e0e0e0 !important;
+  border-radius: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 24px 0;
+  z-index: 1000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 0 !important;
+  border-top: none !important;
+}
+
+.class-sidebar-header {
+  width: 100%;
+  padding: 16px 20px 16px 30px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #e1e5e9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.class-sidebar-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 4px;
+  text-align: left;
+  width: 100%;
+}
+
+.class-sidebar-code {
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 4px;
+  text-align: left;
+  width: 100%;
+}
+
+.class-sidebar-teacher {
+  font-size: 14px;
+  color: #333333;
+  text-align: left;
+  width: 100%;
+}
+
+.class-sidebar-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  padding: 0 10px;
+  min-height: 0; /* Allow flex shrinking */
+}
+
+.class-sidebar-nav button {
+  background: none;
+  color: #333333;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  width: 220px;
+  margin-left: 10px;
+  margin-right: 10px;
+  user-select: none;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.class-sidebar-nav button.active {
+  background: #f8f9fa;
+  color: #1976d2;
+  transform: translateX(1px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.class-sidebar-nav button:hover {
+  background: #f8f9fa;
+  color: #1976d2;
+  transform: translateX(1px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.class-sidebar-leave {
+  margin-top: 0;
+  background: none;
+  color: #333333;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  width: 220px;
+  margin-left: 10px;
+  margin-right: 10px;
+  user-select: none;
+  position: relative;
+  flex-shrink: 0; /* Prevent leave button from shrinking */
+}
+
+/* .class-sidebar-leave::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background: #e1e5e9;
+  margin: 0;
+  padding: 0;
+} */
+
+.class-sidebar-leave:hover {
+  background: #f8f9fa;
+  color: #1976d2;
+  transform: translateX(1px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Override Material-UI button text color */
+.class-sidebar-leave .MuiTypography-root {
+  color: #333333 !important;
+}
+
+.class-sidebar-leave .MuiButton-root .MuiTypography-root {
+  color: #333333 !important;
+}
+
+.class-sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  color: inherit;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.class-sidebar-icon svg {
+  stroke-width: 2.5;
+}
+
+.class-announcement-main {
+  margin-left: 260px;
+}
+
+@media (max-width: 900px) {
+  .class-sidebar {
+    width: 100%;
+    min-width: 0;
+    border-radius: 12px;
+    padding: 18px 4px 12px 4px;
+    box-shadow: 0 1px 6px rgba(25, 118, 210, 0.10);
+    height: auto;
+    position: static;
+    top: unset;
+    left: unset;
+  }
+  
+  .class-announcement-main {
+    margin-left: 0;
+  }
+} 
+
+.modal-leave-overlay {
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(60, 60, 60, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-leave {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  padding: 28px 32px 20px 32px;
+  min-width: 400px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.modal-leave-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.modal-leave-content {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 24px;
+}
+
+.modal-leave-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.modal-leave-cancel {
+  background: #f5f5f5;
+  color: #444;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-leave-cancel:hover {
+  background: #e0e0e0;
+}
+
+.modal-leave-confirm {
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-leave-confirm:hover {
+  background: #1565c0;
+} 
+
+.class-sidebar-divider {
+  width: 100%;
+  height: 1px;
+  background: #e1e5e9;
+  margin: 0px 0 16px 0;
+} 

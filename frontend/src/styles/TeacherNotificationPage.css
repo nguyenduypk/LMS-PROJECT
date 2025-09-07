@@ -1,0 +1,102 @@
+/* TeacherNotificationPage Styles */
+.notification-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-page__content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.notification-page__header {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.notification-page__title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.notification-page__main {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.notification-list {
+  display: grid;
+  gap: 16px;
+}
+
+.notification-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.notification-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.notification-item__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.notification-item__date {
+  font-size: 12px;
+  color: #666;
+}
+
+.notification-item__content {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.notification-item__actions {
+  display: flex;
+  gap: 8px;
+}
+
+.notification-action-btn {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.notification-action-btn:hover {
+  background: #f5f5f5;
+}
+
+.notification-action-btn--primary {
+  background: #1976d2;
+  color: #fff;
+  border-color: #1976d2;
+}
+
+.notification-action-btn--primary:hover {
+  background: #1565c0;
+} 

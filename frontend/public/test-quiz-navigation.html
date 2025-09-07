@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Navigation Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; color: #155724; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; color: #721c24; }
+        .info { background-color: #d1ecf1; border-color: #bee5eb; color: #0c5460; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .result { margin: 10px 0; padding: 10px; border-radius: 4px; }
+        pre { background: #f8f9fa; padding: 10px; border-radius: 4px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Quiz Navigation Diagnostic Tool</h1>
+        <p>Công cụ này giúp kiểm tra và khắc phục sự cố "bấm vào làm bài tập không được"</p>
+
+        <div class="test-section">
+            <h3>1. Kiểm tra Authentication</h3>
+            <button onclick="checkAuth()">Kiểm tra Token</button>
+            <div id="auth-result"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>2. Kiểm tra Backend API</h3>
+            <button onclick="testBackendAPI()">Test Backend Connection</button>
+            <div id="backend-result"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>3. Kiểm tra Quiz API</h3>
+            <button onclick="testQuizAPI()">Test Quiz API</button>
+            <div id="quiz-result"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>4. Navigation Test</h3>
+            <button onclick="testNavigation()">Test Quiz Navigation</button>
+            <div id="nav-result"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>5. Debug Console</h3>
+            <button onclick="showDebugInfo()">Show Debug Info</button>
+            <div id="debug-result"></div>
+        </div>
+
+        <div class="test-section info">
+            <h3>📋 Hướng dẫn khắc phục:</h3>
+            <ol>
+                <li>Đảm bảo backend server đang chạy trên port 5000</li>
+                <li>Đảm bảo frontend server đang chạy trên port 3000</li>
+                <li>Kiểm tra token authentication</li>
+                <li>Kiểm tra database có chứa quiz assignments</li>
+                <li>Kiểm tra routing configuration</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        function checkAuth() {
+            const token = sessionStorage.getItem('token');
+            const user = sessionStorage.getItem('user');
+            const resultDiv = document.getElementById('auth-result');
+            
+            if (token && user) {
+                try {
+                    const userData = JSON.parse(user);
+                    resultDiv.innerHTML = `
+                        <div class="result success">
+                            ✅ Authentication OK<br>
+                            User: ${userData.username || 'Unknown'}<br>
+                            Role: ${userData.role || 'Unknown'}<br>
+                            Token: ${token.substring(0, 20)}...
+                        </div>
+                    `;
+                } catch (e) {
+                    resultDiv.innerHTML = `
+                        <div class="result error">
+                            ❌ Token exists but user data is invalid<br>
+                            Error: ${e.message}
+                        </div>
+                    `;
+                }
+            } else {
+                resultDiv.innerHTML = `
+                    <div class="result error">
+                        ❌ Missing authentication data<br>
+                        Token: ${token ? 'Present' : 'Missing'}<br>
+                        User: ${user ? 'Present' : 'Missing'}
+                    </div>
+                `;
+            }
+        }
+
+        async function testBackendAPI() {
+            const resultDiv = document.getElementById('backend-result');
+            try {
+                const response = await fetch('/api/assignments/quiz/test');
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = `
+                        <div class="result success">
+                            ✅ Backend API Connected<br>
+                            Status: ${response.status}<br>
+                            Message: ${data.message}
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="result error">
+                            ❌ Backend API Error<br>
+                            Status: ${response.status}<br>
+                            Error: ${data.message || 'Unknown error'}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="result error">
+                        ❌ Backend Connection Failed<br>
+                        Error: ${error.message}<br>
+                        Possible causes: Backend server not running, CORS issues
+                    </div>
+                `;
+            }
+        }
+
+        async function testQuizAPI() {
+            const resultDiv = document.getElementById('quiz-result');
+            const token = sessionStorage.getItem('token');
+            
+            if (!token) {
+                resultDiv.innerHTML = `
+                    <div class="result error">
+                        ❌ No authentication token found
+                    </div>
+                `;
+                return;
+            }
+
+            try {
+                // Test getting quizzes for a class
+                const response = await fetch('/api/assignments/quiz/class/10', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    resultDiv.innerHTML = `
+                        <div class="result success">
+                            ✅ Quiz API Working<br>
+                            Found ${data.length} quiz(es)<br>
+                            <pre>${JSON.stringify(data, null, 2)}</pre>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="result error">
+                            ❌ Quiz API Error<br>
+                            Status: ${response.status}<br>
+                            Error: ${data.message || 'Unknown error'}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `
+                    <div class="result error">
+                        ❌ Quiz API Request Failed<br>
+                        Error: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        function testNavigation() {
+            const resultDiv = document.getElementById('nav-result');
+            const currentPath = window.location.pathname;
+            
+            resultDiv.innerHTML = `
+                <div class="result info">
+                    📍 Current Path: ${currentPath}<br>
+                    🔗 Test Navigation Links:<br>
+                    <button onclick="window.open('/student/class/CCMCO/homework', '_blank')">Open Homework Page</button><br>
+                    <button onclick="window.open('/student/class/CCMCO/quiz/1', '_blank')">Test Quiz Page</button><br>
+                    <button onclick="window.open('/student/class/CCMCO/quiz/1/result', '_blank')">Test Quiz Result</button>
+                </div>
+            `;
+        }
+
+        function showDebugInfo() {
+            const resultDiv = document.getElementById('debug-result');
+            const debugInfo = {
+                currentURL: window.location.href,
+                pathname: window.location.pathname,
+                sessionStorage: {
+                    token: sessionStorage.getItem('token') ? 'Present' : 'Missing',
+                    user: sessionStorage.getItem('user') ? 'Present' : 'Missing',
+                    classInfo: sessionStorage.getItem('classInfo') ? 'Present' : 'Missing'
+                },
+                userAgent: navigator.userAgent,
+                timestamp: new Date().toISOString()
+            };
+            
+            resultDiv.innerHTML = `
+                <div class="result info">
+                    <h4>🔍 Debug Information:</h4>
+                    <pre>${JSON.stringify(debugInfo, null, 2)}</pre>
+                </div>
+            `;
+        }
+
+        // Auto-run basic checks on page load
+        window.onload = function() {
+            checkAuth();
+            testBackendAPI();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+.register-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: #fff;
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 40px;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  background: #e3f2fd;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1976d2;
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.15);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1976d2;
+  line-height: 1;
+}
+
+.brand-sub {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  line-height: 1;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Match landing page button typography exactly */
+.header-buttons .btn {
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+}
+
+.login-btn {
+  padding: 10px 20px;
+  border: 2px solid #1976d2;
+  color: #fff;
+  background: #1976d2;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  min-width: 100px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-btn:hover {
+  background: #125ea2;
+  color: #fff;
+}
+
+.register-main {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 28px 24px 40px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.register-main h1 {
+  font-size: 2.4rem !important;
+  font-weight: 600 !important;
+  color: #111 !important;
+  margin-bottom: 16px !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.1 !important;
+}
+
+.sub-text {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 20px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.role-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.role-card {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  padding: 0;
+  width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.role-card:hover {
+  box-shadow: 0 12px 36px rgba(25, 118, 210, 0.12);
+  border-color: #1976d2;
+}
+
+.role-image {
+  padding: 28px 18px 18px 18px;
+  background: linear-gradient(135deg, #f8fbff 0%, #e3f2fd 100%);
+}
+
+.role-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+  margin-bottom: 0;
+}
+
+.role-card button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  color: #1976d2;
+  border-radius: 0;
+  background: #f8fafc;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border-top: 1px solid #e0e0e0;
+}
+
+.role-card:hover button {
+  background: #1976d2;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-header {
+    padding: 16px 20px;
+  }
+  
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  .brand-name {
+    font-size: 1.5rem;
+  }
+  
+  .brand-sub {
+    font-size: 0.9rem;
+  }
+  
+  .login-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .register-main {
+    padding: 40px 20px;
+  }
+  
+  .register-main h1 {
+    font-size: 1.2rem !important;
+  }
+  
+  .sub-text {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    margin-top: 6px;
+  }
+  
+  .role-cards {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .role-card {
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .role-image {
+    padding: 30px 15px 15px 15px;
+  }
+  
+  .role-card img {
+    height: 160px;
+  }
+  
+  .role-card button {
+    padding: 16px;
+    font-size: 1rem;
+  }
+}

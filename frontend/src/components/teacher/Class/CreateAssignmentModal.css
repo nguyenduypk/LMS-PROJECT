@@ -1,0 +1,203 @@
+/* Modal Overlay */
+.create-assignment-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Container */
+.create-assignment-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Close Button */
+.create-assignment-modal__close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.create-assignment-modal__close-btn:hover {
+  background-color: #f5f5f5;
+}
+
+/* Modal Content */
+.create-assignment-modal__content {
+  text-align: center;
+}
+
+.create-assignment-modal__content h2 {
+  margin-bottom: 24px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.create-assignment-modal__options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Option Cards */
+.create-assignment-modal__option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.create-assignment-modal__option:hover {
+  border-color: #1976d2;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Option Icon */
+.create-assignment-modal__option-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.create-assignment-modal__option:hover .create-assignment-modal__option-icon {
+  transform: scale(1.1);
+}
+
+.create-assignment-modal__option-icon--template {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.create-assignment-modal__option:hover .create-assignment-modal__option-icon--template {
+  background-color: #1976d2;
+  color: white;
+}
+
+.create-assignment-modal__option-icon--upload {
+  background-color: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.create-assignment-modal__option:hover .create-assignment-modal__option-icon--upload {
+  background-color: #7b1fa2;
+  color: white;
+}
+
+/* Option Title */
+.create-assignment-modal__option-content {
+  flex: 1;
+  text-align: left;
+}
+
+.create-assignment-modal__option-title {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Option Description */
+.create-assignment-modal__option-description {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Option Button */
+.create-assignment-modal__option-btn {
+  padding: 12px 24px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.create-assignment-modal__option-btn:hover {
+  background-color: #1565c0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .create-assignment-modal__content {
+    padding: 0;
+  }
+  
+  .create-assignment-modal__options {
+    gap: 12px;
+  }
+  
+  .create-assignment-modal__option {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .create-assignment-modal__option-content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .create-assignment-modal-overlay {
+    padding: 16px;
+  }
+  
+  .create-assignment-modal__content {
+    padding: 16px;
+  }
+  
+  .create-assignment-modal__option {
+    padding: 16px;
+  }
+  
+  .create-assignment-modal__option-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+  
+  .create-assignment-modal__option-title {
+    font-size: 16px;
+  }
+} 
