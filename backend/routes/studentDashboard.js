@@ -15,8 +15,8 @@ const getDayOfWeek = (date) => {
 router.get('/dashboard', auth, requireRole(['student']), async (req, res) => {
   try {
     const studentId = req.user.userId;
-
-    // 1) Today's schedules for student's classes
+    
+    // 1) Today's schedules for student's classes ( cần sửa lại cho gọn hơn)
     const today = new Date();
     const dayOfWeek = getDayOfWeek(today);
 
@@ -32,6 +32,8 @@ router.get('/dashboard', auth, requireRole(['student']), async (req, res) => {
     );
 
     // 2) Pending quizzes (not yet submitted by this student)
+    //*bỏ else null đi trong max() vì sql tự hiểu
+    //gom điều kiện cm.user_id và cm.role xuống where
     const [pendingQuizzes] = await pool.execute(
       `SELECT 
           qa.id,
